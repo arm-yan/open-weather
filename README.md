@@ -8,18 +8,18 @@
 </p>
 
 ## Weather API
-##Serving Project 
+## Serving Project 
 `php artisan serve`
 
 By default the HTTP-server will listen to port 8000. However if that port is already in use or you wish to serve multiple applications this way, you might want to specify what port to use. Just add the --port argument:
 
 `php artisan serve --port=8080`
 
-##Request Example
+## Request Example
 
 `GET http://127.0.0.1:8000/api/weather/current?city=moscow&unit=celsius`
 
-##Response Example
+## Response Example
 
 ```json{
 "code": 200,
@@ -37,5 +37,5 @@ By default the HTTP-server will listen to port 8000. However if that port is alr
 }
 ```
 
-##Available Units: Celsius, Fahrenheit
-##Default Language: Russian
+## Available Units: Celsius, Fahrenheit
+## Default Language: Russian
