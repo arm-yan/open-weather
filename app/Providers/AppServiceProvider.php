@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\WeatherService\OpenWeatherMap;
+use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(OpenWeatherMap::class, function ($app) {
+            $client = new Client();
+            return new OpenWeatherMap($client);
+        });
+
+        $this->app->alias(OpenWeatherMap::class, 'weather-service');
     }
 
     /**
